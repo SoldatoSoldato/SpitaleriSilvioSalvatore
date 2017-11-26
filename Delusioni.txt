@@ -1,0 +1,16 @@
+Buonasera prof. Luca Zagarella, sono spitaleri Silvio Salvatore, come
+vedrà nel progetto nellla seconda parte del progetto vi sono dei
+problemi che lei scoprirà. Il problema più grave è 
+che non permette di aggiungere le vetture perchè c'è più un 
+problema che non ho saputo risolverli; l'altro problema è che 
+nella tabella delle vetture ho inserito due chiavi esterne (IDCliente,IDRivenditoreAuto)
+perchè nel form di inserimento delle vetture volevo mettere da quale concessonaria provenisse l'auto;
+ed inizialmente l'ID del cliente della tabella vettura era 0(record iniziale che lei vedrà)
+e poi quando il cliente la compra viene fatto un update della riga contenente l'auto effetivamente comprata
+sostituendo l'ID del cliente 0 con quello del cliente che ha comprato l'auto.
+Il problema risiede nel fatto che non sono riuscito a comunicare l'ID del cliente(coni dati relativi)
+e l'ID del rivenditore(con i dati relativi) alle "tabelle relative alle vetture"(vetture.component.ts).
+Io sono molto deluso che non sono riuscito a raggiungere gli obbiettivi ceh mi sono preffisato sia con me stesso sia con lei,
+ma ci ho tentato da giorni e giorni.
+
+Cordiali Saluti.

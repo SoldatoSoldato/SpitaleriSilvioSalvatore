@@ -1,0 +1,11 @@
+Il mio progetto consiste in una autoconcessonaria che tratta la vendita
+di automobili nuove(in pronta consegna),usate,Km 0.
+Ci sono tre ruoli:
+1)Cliente
+2)Auto concessonario
+3)Vettura
+Il Cliente può comprare una o più vetture tra quelle a scelta tra quelle nella lista,
+di una qualsiasi autoconcessonaria,con i relativi dati descritti nei file del progetto.
+L'auto concessonaria può mettere in vendita una o più automobili, inserendoli nella lista
+delle automobili, con i relativi dati descritti nei file del progetto.
+La vettura, che è registrata nella lista, con i relativi dati,descritti nei file del progetto.

@@ -1,0 +1,61 @@
+<html>
+<head></head>
+<body>
+
+
+    <h1>Lista Vetture <button (click)="addNewVettura()"> + </button></h1>
+
+    <p *ngIf="!vetture"><em>Loading...</em></p>
+
+    <div class="student-home">
+        <div class="students-list" *ngIf="vetture">
+            <div *ngFor="let vett of vetture"
+                 [class.selected]="vett === selectedVettura"
+                 (click)="onSelect(vett)"
+                 [hidden]="vett.deleted">
+                <span class="badge">{{vett.ID || '-' }}</span> {{vett.marca}} <span>{{vett.hasChanges?'*':''}}</span><span class="badge" style="float: right;" (click)="delete(vett)">Compra(???)</span>
+            </div>
+        </div>
+        <div *ngIf="selectedVettura" class="student-detail">
+            <h2 *ngIf="sselectedVettura.ID > 0">({{selectedVettura.ID}}) {{selectedVettura.marca}} {{selectedVettura.modello}} {{selectedVettura.colore}} {{selectedVettura.numPorte}} {{selectedVettura.numTelaio}} {{selectedVettura.targa}} {{selectedVettura.prezzo}} </h2>
+            <h2 *ngIf="!selectedVettura.ID">Nuova vettura</h2>
+            <div>
+                <label>Marca: </label>
+                <input id="input" [(ngModel)]="selectedVettura.marca" placeholder="marca" required/>
+            </div>
+            <div>
+                <label>Modello: </label>
+                <input id="input" [(ngModel)]="selectedVettura.modello" placeholder="modello" required/>
+            </div>
+            <div>
+                <label>Colore: </label>
+                <input id="input" [(ngModel)]="selectedVettura.colore" placeholder="colore" required/>
+            </div>
+            <div>
+                <label>Numero di porte: </label>
+                <input id="input" [(ngModel)]="selectedVettura.numPorte" placeholder="numPorte" required/>
+            </div>
+            <div>
+                <label>Numero di telaio: </label>
+                <input id="input" [(ngModel)]="selectedVettura.numTelaio" placeholder="numTelaio" required/>
+            </div>
+            <div>
+                <label>Targa: </label>
+                <input id="input" [(ngModel)]="selectedVettura.targa" placeholder="targa" required/>
+            </div>
+            <div>
+                <label>Prezzo: </label>
+                <input id="input" [(ngModel)]="selectedVettura.prezzo" placeholder="prezzo" required/>
+            </div>
+            <div>
+                <label>Autoconcessonaria: </label>
+                <input id="input" [(ngModel)]="selectedVettura.IDRivenditoreAuto" placeholder="modello" required/>
+            </div>
+        </div>
+    </div>
+
+    <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" (click)="saveChanges()">
+        <span>SAVE</span>
+    </div>
+</body>
+</html>

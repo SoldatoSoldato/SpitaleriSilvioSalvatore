@@ -1,0 +1,10 @@
+Per eseguire il progetto occorre:
+Nella directory sono presenti due progetti (nel linguaggio C#):
+1)ServiceAPI
+2)SuoerCoolAPI
+Per prima cosa caricare(tramite VisualStudio) il progetto ServiceAPI e poi compilare,eseguire e
+mantenere in esecuzione tale progetto; occorre mantenere il numero di porta del progetto in esecuzione
+(nel nostro caso 5000 in cui esso riceve le richieste)
+Poi caricare(tramite VisualStudio) il progettoSuperCoolAPI e compilare ed eseguire tale progetto;
+Se tutto è corretto si dovrebbe aggiungere,modificare,inserire e cancellare i dati memorizzati nel
+nostro database.

@@ -1,0 +1,51 @@
+<html>
+<body>
+    <h1>Lista Clienti <button (click)="addNewCliente()"> + </button></h1>
+    <p *ngIf="!Clienti"><em>Loading...</em></p>
+    <div class="student-home">
+        <div class="students-list" *ngIf="Clienti">
+            <div *ngFor="let clt of Clienti"
+                 [class.selected]="clt === selectedCliente"
+                 (click)="onSelect(clt)"
+                 [hidden]="clt.deleted">
+                <span class="badge">{{clt.ID || '-' }}</span> {{clt.nome}} {{clt.nome}} <span>{{clt.hasChanges?'*':''}}</span><span class="badge" style="float: right;" (click)="delete(clt)">Cancella</span>
+            </div>
+        </div>
+        <div *ngIf="selectedCliente" class="student-detail">
+            <h2 *ngIf="selectedCliente.ID > 0">({{selectedCliente.id}}) {{selectedCliente.nome}} {{selectedCliente.cognome}} {{selectedCliente.sesso}} {{selectedCliente.indirizzo}} {{selectedCliente.dataNascita}} {{selectedCliente.telefono}} {{selectedCliente.email}} </h2>
+            <h2 *ngIf="!selectedCliente.ID">Nuovo Cliente</h2>
+            <div>
+                <label>Nome: </label>
+                <input id="input" [(ngModel)]="selectedCliente.nome" placeholder="nome" required />
+            </div>
+            <div>
+                <label>Cognome: </label>
+                <input id="input" [(ngModel)]="selectedCliente.cognome" placeholder="cognome" required />
+            </div>
+            <div>
+                <label>Sesso: </label>
+                <input id="input" [(ngModel)]="selectedCliente.sesso" placeholder="sesso" required />
+            </div>
+            <div>
+                <label>Indirizzo: </label>
+                <input id="input" [(ngModel)]="selectedCliente.indirizzo" placeholder="indirizzo" required />
+            </div>
+            <div>
+                <label>Data di nascita: </label>
+                <input id="input" [(ngModel)]="selectedCliente.dataNascita" placeholder="data di nascita" required />
+            </div>
+            <div>
+                <label>Telefono: </label>
+                <input id="input" [(ngModel)]="selectedCliente.telefono" placeholder="telefono" required />
+            </div>
+            <div>
+                <label>Email: </label>
+                <input id="input" type="email" [(ngModel)]="selectedCliente.email" placeholder="email" required />
+            </div>
+        </div>
+    </div>
+    <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" (click)="saveChanges()">
+        <span>SAVE</span>
+    </div>
+</body>
+</html>

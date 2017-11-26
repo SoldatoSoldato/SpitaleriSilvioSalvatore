@@ -1,0 +1,8 @@
+Nella creazione delle tabelle ed in particolare della tabella Vettura
+è vincolata dalla chiave esterna IDCliente; si deve specificare il cliente 
+che ha comprato la vettura perchè è prorio una chiave esterna,quindi
+nella creazione del database e delle tabelle inserisco una riga nella
+tabella Cliente,il cosidetto "cliente 0". Quando creo la riga Vettura
+principalmente inserisco IDCliente del "cliente 0" e poi quando il
+Cliente compra l'auto faccio l'update sostituendo IDCliente del "cliente 0"
+con quello del cliente che ha comrato la vettura.

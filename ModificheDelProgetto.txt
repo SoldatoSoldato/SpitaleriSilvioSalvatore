@@ -1,0 +1,8 @@
+Le modificeh apportate nel progetto di esemio sono:
+Nel progetto ServiceAPI è stata modificata la relativa struttura del database e dei dati
+adattandola con quella prevista dal mio progetto; nel senso che ho sostuito
+la struttura del database e dei dati dell'esempio studenti con quella dell'autoconcessonario.
+Nel progetto SuperCoolAPI è stata modificata la relativa struttura dei dati,
+delle pagine web(file css,html,ts) adattandole con quella prevista dal mio progetto; nel senso che ho sostuito
+la struttura dei dati,delle pagine web(file css,html,ts) dell'esempio studenti con quella dell'autoconcessonario.
+Poi ho arrichito l'interfaccia grafica web aggiungendo delle estensioni nel mio progetto per differenziarlo dall'esempio.

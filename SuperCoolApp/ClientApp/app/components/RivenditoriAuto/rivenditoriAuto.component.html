@@ -1,0 +1,50 @@
+<html>
+<body>
+<h1>Lista Autoconcessonarie  <button (click)="addNewRivenditoreAuto()"> + </button></h1>
+
+<p *ngIf="!rivenditoriAuto"><em>Loading...</em></p>
+
+<div class="student-home">
+    <div class="students-list" *ngIf="rivenditoriAuto">
+        <div *ngFor="let rivAuto of rivenditoriAuto"
+             [class.selected]="rivAuto === selectedRivenditoreAuto"
+             (click)="onSelect(rivAuto)"
+             [hidden]="rivAuto.deleted">
+            <span class="badge">{{rivAuto.id || '-' }}</span> {{rivAuto.nome}} <span>{{rivAuto.hasChanges?'*':''}}</span><span class="badge" style="float: right;" (click)="delete(rivAuto)">Cancella</span>
+        </div>
+    </div>
+    <div *ngIf="selectedRivenditoreAuto" class="student-detail">
+        <h2 *ngIf="selectedRivenditoreAuto.ID > 0">({{selectedRivenditoreAuto.id}})  {{selectedRivenditoreAuto.nome}} {{selectedRivenditoreAuto.PIva}} {{selectedRivenditoreAuto.indirizzo}} {{selectedRivenditoreAuto.email}} {{selectedRivenditoreAuto.telefono}} {{selectedRivenditoreAuto.descrizione}} </h2>
+        <h2 *ngIf="!selectedRivenditoreAuto.ID">Nuova AutoConcessonaria</h2>
+        <div>
+            <label>Nome: </label>
+            <input id="input" [(ngModel)]="selectedRivenditoreAuto.nome" placeholder="nome" required/>
+        </div>
+        <div>
+            <label>PIva: </label>
+            <input id="input" [(ngModel)]="selectedRivenditoreAuto.PIva" placeholder="PIva" required/>
+        </div>
+        <div>
+            <label>Indirizzo: </label>
+            <input id="input" [(ngModel)]="selectedRivenditoreAuto.indirizzo" placeholder="indirizzo" required/>
+        </div>
+        <div>
+            <label>Email: </label>
+            <input id="input" type="email" [(ngModel)]="selectedRivenditoreAuto.email" placeholder="email" required/>
+        </div>
+        <div>
+            <label>Telefono: </label>
+            <input id="input" [(ngModel)]="selectedRivenditoreAuto.telefono" placeholder="telefono" required/>
+        </div>
+        <div>
+            <label>Descrizione: </label>
+            <input id="input" [(ngModel)]="selectedRivenditoreAuto.descrizione" placeholder="descrizione" required/>
+        </div>
+    </div>
+</div>
+
+<div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" (click)="saveChanges()">
+    <span>SAVE</span>
+</div>
+</body>
+</html>
